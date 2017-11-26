@@ -1,0 +1,28 @@
+<!DOCTYPE HTML>
+<html>
+ <head>
+	 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.min.js"></script>
+	<script type="text/javascript" src="controller.js"></script>
+	  <link href="style/style.css" rel="stylesheet" type="text/css">
+
+  <title>Filter songs</title>
+ </head>
+ <body>
+
+
+<div ng-app="Search" ng-controller="SearchCtrl">
+
+    <div class="bar">
+        <input type="text" ng-model="searchSong" placeholder="Search for songs" />
+    </div>
+
+    <ul>
+        <li ng-repeat="i in songs | filter : searchSong">
+            <a href="{{i.url}}"><img ng-src="{{i.image}}" /></a>
+            <p>{{i.title}}</p>
+        </li>
+    </ul>
+</div>
+ 
+ </body>
+</html>
